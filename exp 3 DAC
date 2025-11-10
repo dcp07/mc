@@ -1,0 +1,37 @@
+DAC
+SQUARE WAVE:
+#include<Reg51.h>
+void delay(unsigned int time);
+void main()
+{
+while(1)
+{
+P0=0XFF;
+delay(25);
+P0=0X00;
+delay(25);
+}
+}
+void delay(unsigned int time)
+{
+int i,j;
+for(i=0;i<time;i++)
+for(j=0;j<5000;j++);
+}
+
+
+TRIANGULAR WAVE:
+#include<reg51.h>
+void main()
+{int count;
+P0=0X00;
+P0=0X00;
+for(count=0X00;count<0Xff;count++)
+{P0=count;
+}
+P0=0Xff;
+P0=0Xff;
+for(count=0Xff;count<0X00;count--)
+{P0=count;
+}
+}
